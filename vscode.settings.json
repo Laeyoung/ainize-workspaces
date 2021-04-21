@@ -1,0 +1,5 @@
+{
+    "browser-preview.startUrl": "https://ainize.ai",
+    "browser-preview.chromeExecutable": "/usr/bin/google-chrome",
+    "view-in-browser.customBrowser": "chrome"
+}

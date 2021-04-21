@@ -9,7 +9,7 @@ then
   git config --global user.name "$USER_NAME"
 fi
 
-jupyter notebook  --NotebookApp.token=$PASSWORD --ip=0.0.0.0 --port=8000 --allow-root &
+#jupyter notebook  --NotebookApp.token=$PASSWORD --ip=0.0.0.0 --port=8000 --allow-root &
 
 if [ -z "$PASSWORD" ]
 then
@@ -19,12 +19,12 @@ AUTH=password
 fi
 code-server /workspace/ --bind-addr=0.0.0.0:8010 --auth $AUTH &
 
-if [ -z "$PASSWORD" ]
-then
-TTYD_PASS=
-else
-TTYD_PASS="-c :$PASSWORD"
-fi
-ttyd -p 8020 $TTYD_PASS bash &
+#if [ -z "$PASSWORD" ]
+#then
+#TTYD_PASS=
+#else
+#TTYD_PASS="-c :$PASSWORD"
+#fi
+#ttyd -p 8020 $TTYD_PASS bash &
 
 tail -f /dev/null
