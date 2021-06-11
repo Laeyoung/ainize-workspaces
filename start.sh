@@ -10,6 +10,15 @@ then
 fi
 chmod -R 555 /workspace
 
+git -C /workspace clone https://github.com/KLUE-benchmark/KLUE.git
+
+apt-get update -y
+apt-get upgrade -y
+apt-get install git-lfs -y
+
+git lfs install
+git clone https://huggingface.co/klue/roberta-small
+
 jupyter notebook  --NotebookApp.token=$PASSWORD --ip=0.0.0.0 --port=8000 --allow-root &
 
 if [ -z "$PASSWORD" ]
